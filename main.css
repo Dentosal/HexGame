@@ -121,3 +121,7 @@ input[correct="true"] {
 #homebox .row {
     text-align: left;
 }
+
+#startbox code {
+    font-size: 3rem;
+}
