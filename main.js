@@ -78,11 +78,8 @@ function check_answer() {
     }
     show_answer(a === answer);
     show_stats();
+    answer = "";
     setTimeout(next_puzzle, 500);
-}
-
-function esc() {
-    $("#userinput").val("");
 }
 
 function init() {
@@ -105,9 +102,13 @@ function enter() {
         state = "game";
         next_puzzle();
     }
-    else if (state === "game") {
+    else if (state === "game" && answer.length) {
         check_answer();
     }
+}
+
+function esc() {
+    $("#userinput").val("");
 }
 
 $(document).ready(function () {
