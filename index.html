@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HexGame</title>
+        <link rel="stylesheet" href="//d7.fi/skeleton.css" charset="utf-8">
+        <link rel="stylesheet" href="main.css" charset="utf-8">
+        <script src="//d7.fi/jquery.js" charset="utf-8"></script>
+        <script src="main.js" charset="utf-8"></script>
+        <script src="hash.js" charset="utf-8"></script>
+        <script src="util.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="navbar">
+            <div class="row">
+                <a game="home" href="#home">Home</a>
+                <a game="bintohex" onclick="set_game('bintohex')">Bin to Hex</a>
+                <a game="hextobin" onclick="set_game('hextobin')">Hex to Bin</a>
+                <a game="hextoascii" onclick="set_game('hextoascii')">Hex to ASCII</a>
+                <a game="asciitohex" onclick="set_game('asciitohex')">ASCII to Hex</a>
+                <a game="random" onclick="set_game('random')">Random</a>
+            </div>
+            <div class="row">
+                <a difficulty="easy" onclick="set_difficulty('easy')">Easy</a>
+                <a difficulty="moderate" onclick="set_difficulty('moderate')">Moderate</a>
+                <a difficulty="hard" onclick="set_difficulty('hard')">Hard</a>
+            </div>
+        </div>
+        <article>
+            <div id="centerbox" class="container" mode="home">
+                <div id="homebox">
+                    <h1>HexGame 0.2.2</h1>
+                    <div class="row">
+                        <h2 class="three columns">What?</h2>
+                        <p class="nine columns">
+                            The HexGame is a set of simple conversion games, where
+                            you convert different formats to hexadecimal and back.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <h2 class="three columns">How?</h2>
+                        <p class="nine columns">
+                            Select the game and difficulty from the top bar. Then
+                            press enter to start a game. Then type in your answer
+                            and press enter. If your answer was incorrect, the game
+                            tells you the correct answer.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <h2 class="three columns">Why?</h2>
+                        <p class="nine columns">
+                            It's fun, and somewhat useful.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <h2 class="three columns">Who?</h2>
+                        <p class="nine columns">
+                            The HexGame is written by Hannes Karppila in a few
+                            hours during a long and not-so-boring Sunday, 8.5.2016.
+                        </p>
+                    </div>
+                </div>
+                <div id="startbox">
+                    <code>Press enter to start.</code>
+                </div>
+                <div id="game_content">
+                    <div id="statistics" class="twelve columns row">
+                        <div class="six columns">
+                            Answers: <span id="count"></span>
+                        </div>
+                        <div class="six columns">
+                            Correct: <span id="correct_p"></span>%
+                        </div>
+                    </div>
+                    <div id="databox" class="row">
+                        <code id="data" class="twelve columns">0xEADECA</code>
+                    </div>
+                    <div id="instructions" class="row">
+                        Convert <span id="in_f"></span> to <span id="out_f"></span>.
+                    </div>
+                    <div id="inputbox" class="row">
+                        <input id="userinput" class="twelve columns" type="text" value="" autofocus="autofocus" tabindex="0">
+                    </div>
+                </div>
+            </div>
+        </article>
+    </body>
+</html>

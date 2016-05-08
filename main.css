@@ -1,0 +1,123 @@
+body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Lucida Console', Monaco, 'Courier New', monospace;
+
+    background: #333;
+}
+
+#navbar {
+    display: block;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background: #000;
+
+    z-index: 99;
+}
+
+#navbar a {
+    padding: 3px 10px;
+
+    color: green;
+    background: black;
+
+    text-decoration: none;
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    transition: all 0.2s;
+}
+
+#navbar a:hover {
+    color: black;
+    background: green;
+}
+
+#navbar a[selected] {
+    color: black;
+    background: green;
+}
+
+#centerbox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 8rem;
+    border-radius: 2rem;
+
+    color: #fff;
+    background: #000;
+    text-align: center;
+
+    min-width: 50vmin;
+
+    transform: all 1s;
+}
+
+#centerbox input {
+    color: black;
+    padding: 50px;
+    margin: 0;
+}
+#centerbox code {
+    color: black;
+    padding: 30px;
+    margin: 40px 0;
+}
+
+#databox, #userinput {
+    font-size: 5rem;
+    text-align: center;
+    font-family: 'Lucida Console', Monaco, 'Courier New', monospace;
+}
+
+#centerbox[mode="home"] #homebox {
+    display: block;
+}
+#centerbox[mode="start"] #startbox {
+    display: block;
+}
+#centerbox[mode="game"] #game_content {
+    display: block;
+}
+
+
+#homebox {
+    display: none;
+    color: green;
+}
+
+#startbox {
+    display: none;
+    max-height: 15vmin;
+}
+
+#game_content {
+    display: none;
+    max-height: 50vmin;
+}
+
+input[correct="false"] {
+    color: red !important;
+}
+input[correct="true"] {
+    color: green !important;
+}
+
+#homebox .row {
+    text-align: left;
+}
