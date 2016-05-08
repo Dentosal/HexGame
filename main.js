@@ -81,6 +81,9 @@ function check_answer() {
     setTimeout(next_puzzle, 500);
 }
 
+function esc() {
+    $("#userinput").val("");
+}
 
 function init() {
     set_hash();
@@ -112,6 +115,10 @@ $(document).ready(function () {
     $(document).keydown(function(event) {
         if ((event.keyCode || event.which) === 13) {
             enter();
+            event.stopPropagation();
+        }
+        if ((event.keyCode || event.which) === 27) {
+            esc();
             event.stopPropagation();
         }
     });
